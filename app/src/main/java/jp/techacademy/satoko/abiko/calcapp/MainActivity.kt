@@ -11,10 +11,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // 入力値Ａ、入力値Ｂ、計算結果の初期化
-        var numA = 0.0
-        var numB = 0.0
-        var sum  = 0.0
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
@@ -26,6 +22,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.button4.setOnClickListener(this)
     }
     override fun onClick(v: View) {
+        // 入力値Ａ、入力値Ｂ、計算結果の初期化
+        var numA = 0.0
+        var numB = 0.0
+        var sum  = 0.0
         //　入力値を数値に変換
         numA = editText1
         numB = editText2
