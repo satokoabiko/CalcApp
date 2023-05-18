@@ -14,7 +14,7 @@ class SecondActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         //   回答を表示する
-        val value1 = intent.getIntExtra("計算結果＝", 0)
+        val value1 = intent.getIntExtra("sum", 0)
 
         binding.textView3.text = "${value1}"
 

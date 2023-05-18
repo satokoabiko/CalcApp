@@ -23,12 +23,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
     override fun onClick(v: View) {
         // 入力値Ａ、入力値Ｂ、計算結果の初期化
-        var numA = 0.0
-        var numB = 0.0
+//        var numA = 0.0
+//        var numB = 0.0
         var sum  = 0.0
         //　入力値を数値に変換
-        numA = editText1
-        numB = editText2
+        var numA = binding.editText1.text.toString().toDouble()
+        var numB = binding.editText2.text.toString().toDouble()
         if (v.id == R.id.button1) {
             //   加算処理
             sum = numA + numB
@@ -47,13 +47,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
              catch (e: Exception) {
                  sum = 0.0
              }
-            finally {}
         }
-        override fun onClick(v: View?) {
-            val intent = Intent(this, SecondActivity::class.java)
-            //   回答をサブ画面へ引き渡す
-            intent.putExtra("計算結果＝", sum )
-            startActivity(intent)
-        }
+        val intent = Intent(this, SecondActivity::class.java)
+        //   回答をサブ画面へ引き渡す
+        intent.putExtra("sum", sum )
+        startActivity(intent)
+
     }
 }
